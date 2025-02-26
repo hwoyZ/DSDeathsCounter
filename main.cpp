@@ -10,12 +10,12 @@
 
 #include "soulgame.hpp"
 
+#define DEFAULT_FILENAME "DSDeathsCount.txt"
 
-static const char default_filename[] = "DSDeathsCount.txt";
+#define DEFAULT_PLACEHOLDER "{}"
 
-static const char default_formatted_text[]="Deaths: {}";
+#define DEFAULT_FORMATTED_TEXT ("Deaths: " DEFAULT_PLACEHOLDER)
 
-static const char default_placeholder[]="{}";
 
 
 static std::size_t searching(const std::vector<CSoulGame> &games)
@@ -42,7 +42,7 @@ static std::size_t searching(const std::vector<CSoulGame> &games)
 
 static bool replace(std::string& str, const std::string& from, const std::string& to)
 {
-    size_t start_pos = str.find(from);
+    std::size_t start_pos = str.find(from);
     if(start_pos == std::string::npos)
         return false;
     str.replace(start_pos, from.length(), to);
@@ -59,14 +59,24 @@ static void usage()
     std::cerr << "format = \"COUNT: {}\"\n";
 
     std::cerr << "\nDefault param:\n";
-    std::cerr << "format = " << default_formatted_text << std::endl;
-    std::cerr << "filename = " << default_filename << std::endl;
+    std::cerr << "format = " << DEFAULT_FORMATTED_TEXT << std::endl;
+    std::cerr << "filename = " << DEFAULT_FILENAME << std::endl;
+}
+
+static void write_to_file(const std::string &filename,std::ofstream &file,std::string text,int value)
+{
+    std::filesystem::resize_file(filename, 0);
+    file.seekp(0);
+
+    while(replace(text,DEFAULT_PLACEHOLDER,std::to_string(value))) {}
+    file << text;
+    file.flush();
 }
 
 int main(int argc,const char **argv)
 {
 
-    std::string filename=default_filename,formatted_text=default_formatted_text;
+    std::string filename=DEFAULT_FILENAME,formatted_text=DEFAULT_FORMATTED_TEXT;
 
     switch(argc)
     {
@@ -90,12 +100,14 @@ int main(int argc,const char **argv)
 
     };
 
-
     while(true)
     {
         const auto [error,gameproc] = games[searching(games)].getCSoulGameProcess();
 
         std::cout << gameproc.getname() << std::endl;
+
+        int old_value=0;
+        write_to_file(filename,file,formatted_text,old_value);
 
         while(error.id==0)
         {
@@ -105,14 +117,11 @@ int main(int argc,const char **argv)
             {
                 std::cout << "DeathCount: " << op.value() << std::endl;
 
-                std::filesystem::resize_file(filename, 0);
-                file.seekp(0);
-
-                auto text = formatted_text;
-                while(replace(text,default_placeholder,std::to_string(op.value()))) {}
-                file << text;
-                file.flush();
-
+                if(op.value() != old_value)
+                {
+                    old_value = op.value();
+                    write_to_file(filename,file,formatted_text,old_value);
+                }
             }
             else
             {

@@ -2,4 +2,6 @@
 *.exe
 *.txt
 *.o
+*.dll
+*.orig
 Makefile

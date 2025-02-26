@@ -65,36 +65,4 @@ static HMODULE GetBaseAddress(const HANDLE hProcess)
     return lphModule[0]; // Module 0 is apparently always the EXE itself, returning its address
 }
 
-static bool PeekMemory(HANDLE handle, uintptr_t baseAddress, bool isX64,
-                       const std::vector < int > & offsets, int & value)
-{
-    uintptr_t address = baseAddress;
-    BYTE buffer[8];
-    SIZE_T discard = 0;
-
-    for (int offset: offsets)
-    {
-        if (address == 0)
-        {
-            return false;
-        }
-
-        address += offset;
-        if (!ReadProcessMemory(handle, (LPCVOID) address, buffer, 8, & discard))
-        {
-            return false;
-        }
-
-        address = isX64 ? * (uintptr_t * ) buffer : * (uint32_t * ) buffer;
-
-    }
-
-    value = static_cast < int > (address);
-    return true;
-}
-
-
-static_assert(sizeof(HMODULE)==sizeof(uintptr_t),"sizeof(HMODULE)!=sizeof(uintptr_t)");
-
-
 #endif

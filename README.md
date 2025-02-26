@@ -23,6 +23,6 @@ Elden Ring uses Easy Anti-Cheat to detect and deny trying to read from the proce
 
 
 ## Inspired by
- [DSDeaths](https://github.com/quidrex/DSDeaths)
- * I rewrited it in C++17.
+ [https://github.com/quidrex/DSDeaths](https://github.com/quidrex/DSDeaths)
+ * Rewritten in C++17.
  * Can be built by free MinGw gcc or clang.
