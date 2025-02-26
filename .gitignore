@@ -1,0 +1,5 @@
+*.dll
+*.exe
+*.txt
+*.o
+Makefile

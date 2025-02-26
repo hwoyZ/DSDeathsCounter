@@ -1,0 +1,7 @@
+CC=clang
+CXX=clang++
+
+RM=DEL
+
+include Makefile.mk
+
