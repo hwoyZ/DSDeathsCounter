@@ -23,5 +23,5 @@ distclean:
 
 .PHONY: rel
 
-rel:
+rel: $(BIN)
 	tar -cvzf $(NAME)-$(VER)-amd64.tgz $(BIN) *.dll
