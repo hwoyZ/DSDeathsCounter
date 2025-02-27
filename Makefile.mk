@@ -1,4 +1,7 @@
-BIN=DSDeathsCounter.exe
+NAME=DSDeathsCounter
+
+BIN=$(NAME).exe
+
 CXXFLAGS=-std=c++17 -pedantic  -Wall -O2
 
 SHELL=cmd.exe
@@ -16,4 +19,9 @@ clean:
 	$(RM) *.o $(BIN)
 	
 distclean:
-	$(RM) *.o $(BIN) *.txt *.orig Makefile
+	$(RM) *.o $(BIN) *.txt *.orig Makefile *.tgz *.txz
+
+.PHONY: rel
+
+rel:
+	tar -cvzf $(NAME)-$(VER)-amd64.tgz $(BIN) *.dll

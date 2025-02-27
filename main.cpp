@@ -49,18 +49,27 @@ static bool replace(std::string& str, const std::string& from, const std::string
     return true;
 }
 
-static void usage()
+static void usage(const std::vector<CSoulGame> &games)
 {
-    std::cerr << "\n\n==== USAGE ====\n\n";
-    std::cerr << "program\n";
-    std::cerr << "program format filename\n";
+    std::cerr << "\n\n================== USAGE ==================\n\n";
+    std::cerr << "\tUsage:\n";
+    std::cerr << "\t\tprogram\n";
+    std::cerr << "\t\tprogram format\n";
+    std::cerr << "\t\tprogram format filename\n\n";
 
-    std::cerr << "\nExample:\n";
-    std::cerr << "format = \"COUNT: {}\"\n";
+    std::cerr << "\tExample:\n";
+    std::cerr << "\t\tprogram \"COUNT: " << DEFAULT_PLACEHOLDER << "\" OBS.txt\n\n";
 
-    std::cerr << "\nDefault param:\n";
-    std::cerr << "format = " << DEFAULT_FORMATTED_TEXT << std::endl;
-    std::cerr << "filename = " << DEFAULT_FILENAME << std::endl;
+    std::cerr << "\tDefault params:\n";
+    std::cerr << "\t\tplaceholder = " << DEFAULT_PLACEHOLDER << std::endl;
+    std::cerr << "\t\tformat = " << DEFAULT_FORMATTED_TEXT << std::endl;
+    std::cerr << "\t\tfilename = " << DEFAULT_FILENAME << std::endl << std::endl;
+
+    std::cerr << "\tSupported games:\n";
+    for(const auto &g:games)
+        std::cerr << "\t\t" << g.getname() << std::endl;
+
+    std::cerr << "\n\n================== END ==================\n\n";
 }
 
 static void write_to_file(const std::string &filename,std::ofstream &file,std::string text,int value)
@@ -73,10 +82,19 @@ static void write_to_file(const std::string &filename,std::ofstream &file,std::s
     file.flush();
 }
 
+
 int main(int argc,const char **argv)
 {
-
     std::string filename=DEFAULT_FILENAME,formatted_text=DEFAULT_FORMATTED_TEXT;
+
+    const std::vector<CSoulGame> games =
+    {
+        CSoulGame("DarkSoulsRemastered.exe",{0,0},{0x1C8A530,0x98}),
+        CSoulGame("eldenring.exe",{0,0},{0x3D5DF38, 0x94})
+
+    };
+
+    usage(games);
 
     switch(argc)
     {
@@ -87,18 +105,11 @@ int main(int argc,const char **argv)
     case 1:
         break;
     default:
-        usage();
         return 1;
     }
 
     std::ofstream file(filename);
 
-    const std::vector<CSoulGame> games =
-    {
-        CSoulGame("DarkSoulsRemastered.exe",{0,0},{0x1C8A530,0x98}),
-        CSoulGame("eldenring.exe",{0,0},{0x3D5DF38, 0x94})
-
-    };
 
     while(true)
     {

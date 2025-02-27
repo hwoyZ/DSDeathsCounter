@@ -4,4 +4,6 @@
 *.o
 *.dll
 *.orig
+*.tgz
+*.txz
 Makefile

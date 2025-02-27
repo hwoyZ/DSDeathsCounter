@@ -158,6 +158,11 @@ public:
         return std::make_pair(CError{0,""},CSoulGameProcess(name,pid,hProcess,baseaddress,isWow64 ? offset32:offset64));
     }
 
+    const std::string& getname() const
+    {
+        return name;
+    }
+
 };
 
 #if !defined __GNUC__
