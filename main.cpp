@@ -51,7 +51,12 @@ static bool replace(std::string& str, const std::string& from, const std::string
 
 static void usage(const std::vector<CSoulGame> &games)
 {
-    std::cerr << "\n\n================== USAGE ==================\n\n";
+    std::cerr << "\n\n================== HELP ==================\n\n";
+
+#ifdef __DCVERSION__
+    std::cerr << "\tVERSION:" << __DCVERSION__ << "\n\n";
+#endif
+
     std::cerr << "\tUsage:\n";
     std::cerr << "\t\tprogram\n";
     std::cerr << "\t\tprogram format\n";

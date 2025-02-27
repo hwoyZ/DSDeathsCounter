@@ -2,7 +2,9 @@ NAME=DSDeathsCounter
 
 BIN=$(NAME).exe
 
-CXXFLAGS=-std=c++17 -pedantic  -Wall -O2
+VER=pre-release
+
+CXXFLAGS=-std=c++17 -pedantic  -Wall -O2 -D__DCVERSION__='"$(VER)"'
 
 SHELL=cmd.exe
 
