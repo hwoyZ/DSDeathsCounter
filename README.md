@@ -26,14 +26,14 @@ Elden Ring uses Easy Anti-Cheat to detect and deny trying to read from the proce
 ### Tool chain
  * [MinGW-GCC](https://github.com/skeeto/w64devkit)
  * [MinGW-CLANG](https://github.com/mstorsjo/llvm-mingw)
- * ``` SET COMPILERDIR="PATH TO TOOLCHAIN EXECUTABLE FILE" ``` in MINGW_CLANG.bat or MINGW_GCC.bat.
+ * ``` SET COMPILERDIR="PATH TO TOOLCHAIN EXECUTABLE FILE" ``` in **MINGW_CLANG.bat** or **MINGW_GCC.bat**.
 ### Build excutable file
- * Open MINGW_CLANG.bat or MINGW_GCC.bat.
+ * Open **MINGW_CLANG.bat** or **MINGW_GCC.bat**.
 ```
 make
 ```
 ### Build release
- * Open MINGW_CLANG.bat or MINGW_GCC.bat.
+ * Open **MINGW_CLANG.bat** or **MINGW_GCC.bat**.
 ```
 make rel
 ```
