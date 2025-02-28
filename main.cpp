@@ -16,6 +16,10 @@
 
 #define DEFAULT_FORMATTED_TEXT ("Deaths: " DEFAULT_PLACEHOLDER)
 
+#define SEARCHING_SLEEP_TIME std::chrono::milliseconds(500)
+
+#define GETDEATHCOUNT_SLEEP_TIME std::chrono::milliseconds(1000)
+
 
 
 static std::size_t searching(const std::vector<CSoulGame> &games)
@@ -34,7 +38,7 @@ static std::size_t searching(const std::vector<CSoulGame> &games)
                 return i;
             }
 
-            std::this_thread::sleep_for(std::chrono::milliseconds(500));
+            std::this_thread::sleep_for(SEARCHING_SLEEP_TIME);
         }
     }
 }
@@ -145,7 +149,7 @@ int main(int argc,const char **argv)
                 break;
             }
 
-            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+            std::this_thread::sleep_for(GETDEATHCOUNT_SLEEP_TIME);
         }
     }
 
