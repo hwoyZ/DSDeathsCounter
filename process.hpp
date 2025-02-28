@@ -36,7 +36,7 @@ static DWORD FindProcessId(const char * processname)
     do
     {
         //std::cout << "Checking process " << pe32.szExeFile << std::endl;
-        if (0 == std::strcmp(processname, pe32.szExeFile))
+        if (!std::strcmp(processname, pe32.szExeFile))
         {
             result = pe32.th32ProcessID;
             break;
