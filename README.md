@@ -11,9 +11,9 @@ The death count is not reset when you enter NG+.
  * DARK SOULS II (************** Not yet)
  * DARK SOULS II: Scholar of the First Sin (************** Not yet)
  * DARK SOULS III (************** Not yet)
- * DARK SOULS: REMASTERED
+ * **DARK SOULS: REMASTERED**
  * Sekiro: Shadows Die Twice (************** Not yet)
- * Elden Ring (offline, disable EAC)
+ * **Elden Ring** (offline, disable EAC)
 
  Note that only the current patch as of the time of release works. Please open a ticket if there is a new patch and it stops working.
 
@@ -64,10 +64,6 @@ program "COUNT: {}" OBS.txt
  * placeholder = {}
  * format = Deaths: {}
  * filename = DSDeathsCount.txt
-
-### Supported games
- * DarkSoulsRemastered.exe
- * eldenring.exe
 
 ## Inspired by
  [https://github.com/quidrex/DSDeaths](https://github.com/quidrex/DSDeaths)
