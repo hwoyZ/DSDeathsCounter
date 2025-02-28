@@ -21,6 +21,16 @@ The death count is not reset when you enter NG+.
 
 Elden Ring uses Easy Anti-Cheat to detect and deny trying to read from the process memory. Use your favorite search engine to find out how to disable EAC to play offline.
 
+## How to buid
+ Supports 64 bit only
+### Tool chain
+ * [MinGW-GCC](https://github.com/skeeto/w64devkit)
+ * [MinGW-CLANG](https://github.com/mstorsjo/llvm-mingw)
+### build excutable file
+ * make
+### build release
+ * make rel
+ * make rel VER=v1.0.0
 
 ## Inspired by
  [https://github.com/quidrex/DSDeaths](https://github.com/quidrex/DSDeaths)
