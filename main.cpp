@@ -58,7 +58,9 @@ static void usage(const std::vector<CSoulGame> &games)
     std::cerr << "\n\n================== HELP ==================\n\n";
 
 #ifdef __DCVERSION__
-    std::cerr << "\tVERSION:" << __DCVERSION__ << "\n\n";
+    std::cerr << "\tVERSION:" << __DCVERSION__ << "\n";
+    std::cerr << "\tCOMPILED DATE:" << __DATE__ << "\n";
+    std::cerr << "\tCOMPILED TIME:" << __TIME__ << "\n\n";
 #endif
 
     std::cerr << "\tUsage:\n";
