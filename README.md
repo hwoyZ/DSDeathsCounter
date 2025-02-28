@@ -41,8 +41,6 @@ make rel VER=v1.0.0
 
 ## USAGE
 
-VERSION:pre-release
-
 ### Usage
 ```
 program
