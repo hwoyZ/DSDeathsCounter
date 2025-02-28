@@ -39,6 +39,29 @@ make rel
 make rel VER=v1.0.0
 ```
 
+## USAGE
+================== HELP ==================
+
+VERSION:pre-release
+
+Usage:
+&nbsp;	program
+&nbsp;	program format
+&nbsp;	program format filename
+
+Example:
+&nbsp;	program "COUNT: {}" OBS.txt
+
+Default params:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	placeholder = {}
+&nbsp;&nbsp;&nbsp;&nbsp;	format = Deaths: {}
+&nbsp;&nbsp;&nbsp;	filename = DSDeathsCount.txt
+
+Supported games:
+&nbsp;&nbsp;	DarkSoulsRemastered.exe
+&nbsp;	eldenring.exe
+
+================== END ==================
 ## Inspired by
  [https://github.com/quidrex/DSDeaths](https://github.com/quidrex/DSDeaths)
  * Rewritten in C++17.
