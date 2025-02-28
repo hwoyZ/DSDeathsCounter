@@ -26,11 +26,18 @@ Elden Ring uses Easy Anti-Cheat to detect and deny trying to read from the proce
 ### Tool chain
  * [MinGW-GCC](https://github.com/skeeto/w64devkit)
  * [MinGW-CLANG](https://github.com/mstorsjo/llvm-mingw)
-### build excutable file
- * make
-### build release
- * make rel
- * make rel VER=v1.0.0
+### Build excutable file
+```bat
+make
+```
+### Build release
+```bat
+make rel
+```
+
+```bat
+make rel VER=v1.0.0
+```
 
 ## Inspired by
  [https://github.com/quidrex/DSDeaths](https://github.com/quidrex/DSDeaths)
