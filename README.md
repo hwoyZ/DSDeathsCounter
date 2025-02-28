@@ -27,15 +27,15 @@ Elden Ring uses Easy Anti-Cheat to detect and deny trying to read from the proce
  * [MinGW-GCC](https://github.com/skeeto/w64devkit)
  * [MinGW-CLANG](https://github.com/mstorsjo/llvm-mingw)
 ### Build excutable file
-```bat
+```
 make
 ```
 ### Build release
-```bat
+```
 make rel
 ```
 
-```bat
+```
 make rel VER=v1.0.0
 ```
 
@@ -44,18 +44,18 @@ make rel VER=v1.0.0
 VERSION:pre-release
 
 ### Usage
-```bat
+```
 program
 ```
-```bat
+```
 program format
 ```
-```bat
+```
 program format filename
 ```
 
 ### Example
-```bat
+```
 program "COUNT: {}" OBS.txt
 ```
 
