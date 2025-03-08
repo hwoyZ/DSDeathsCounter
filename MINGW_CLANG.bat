@@ -1,14 +1,14 @@
 @echo off
 
 
-SET COMPILERDIR=F:\llvm-mingw-20250114-msvcrt-x86_64\bin
+SET COMPILERDIR=F:\llvm-mingw-msvcrt-x86_64
 
-set FORMATTER=F:\astyle-3.6.6-x64
+set FORMATTER=F:\astyle
 
-set GIT=F:\Git\bin
+set GIT=F:\Git
 
 
-set PATH=%COMPILERDIR%;%FORMATTER%;%GIT%;%PATH%
+set PATH=%COMPILERDIR%\bin;%FORMATTER%;%GIT%\bin;%PATH%
 
 
 echo include Makefile.clang > Makefile

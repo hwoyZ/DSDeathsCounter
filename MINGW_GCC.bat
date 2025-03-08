@@ -1,16 +1,16 @@
 @echo off
 
 
-SET COMPILERDIR=F:\w64devkit\bin
+SET COMPILERDIR=F:\w64devkit
 
 
-set FORMATTER=F:\astyle-3.6.6-x64
+set FORMATTER=F:\astyle
 
 
-set GIT=F:\Git\bin
+set GIT=F:\Git
 
 
-set PATH=%COMPILERDIR%;%FORMATTER%;%GIT%;%PATH%
+set PATH=%COMPILERDIR%\bin;%FORMATTER%;%GIT%\bin;%PATH%
 
 echo include Makefile.gcc > Makefile
 
