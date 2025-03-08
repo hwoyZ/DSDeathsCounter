@@ -10,7 +10,8 @@ set GIT=F:\Git
 
 set PATH=%COMPILERDIR%\bin;%FORMATTER%;%GIT%\bin;%PATH%
 
+echo COMPILER_DIR=%COMPILERDIR%> Makefile
 
-echo include Makefile.clang > Makefile
+echo include Makefile.clang >> Makefile
 
 cmd.exe /K title MINGW-CLANG 64 environment

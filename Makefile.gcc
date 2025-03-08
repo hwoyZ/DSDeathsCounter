@@ -1,7 +1,12 @@
 CC=gcc
 CXX=g++
 
-RM=rm
+VERSIONFLAGS=$(COMPILER_DIR)\bin\gcc.exe --no-recursion
 
     include Makefile.mk
 
+
+prepare: $(BIN)
+	rmdir /S /Q $(RELDIR) 2>nul &\
+	mkdir $(RELDIR) &&\
+	copy /Y $(BIN) $(RELDIR)

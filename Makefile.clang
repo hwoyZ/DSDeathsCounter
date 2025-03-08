@@ -1,7 +1,14 @@
 CC=clang
 CXX=clang++
 
-RM=DEL
-
 include Makefile.mk
+
+.PHONY: prepare
+
+prepare: $(BIN)
+	rmdir /S /Q $(RELDIR) 2>nul &\
+	mkdir $(RELDIR) &&\
+	copy /Y $(BIN) $(RELDIR) &&\
+	copy /Y "$(COMPILER_DIR)\bin\libc++.dll" $(RELDIR) &&\
+	copy /Y "$(COMPILER_DIR)\bin\libunwind.dll" $(RELDIR)
 
