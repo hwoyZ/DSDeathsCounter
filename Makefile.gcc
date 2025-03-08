@@ -1,9 +1,7 @@
 CC=gcc
 CXX=g++
 
-VERSIONFLAGS=$(COMPILER_DIR)\bin\gcc.exe --no-recursion
-
-    include Makefile.mk
+include Makefile.mk
 
 
 prepare: $(BIN)
