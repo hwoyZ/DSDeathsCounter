@@ -3,6 +3,7 @@ CXX=g++
 
 include Makefile.mk
 
+.PHONY: prepare
 
 prepare: $(BIN)
 	rmdir /S /Q $(RELDIR) 2>nul &\
