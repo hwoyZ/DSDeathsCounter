@@ -10,7 +10,7 @@ The death count is not reset when you enter NG+.
  * DARK SOULS: Prepare To Die Edition (************** Not yet)
  * DARK SOULS II (************** Not yet)
  * DARK SOULS II: Scholar of the First Sin (************** Not yet)
- * DARK SOULS III (************** Not yet)
+ * **DARK SOULS III**
  * **DARK SOULS: REMASTERED**
  * Sekiro: Shadows Die Twice (************** Not yet)
  * **Elden Ring** (offline, disable EAC)

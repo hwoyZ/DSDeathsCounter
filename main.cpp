@@ -100,6 +100,7 @@ int main(int argc,const char **argv)
 
     const std::vector<CSoulGame> games =
     {
+        CSoulGame("DarkSoulsIII.exe",{0,0},{0x47572B8,0x98}),
         CSoulGame("DarkSoulsRemastered.exe",{0,0},{0x1C8A530,0x98}),
         CSoulGame("eldenring.exe",{0,0},{0x3D5DF38, 0x94})
 
