@@ -37,6 +37,7 @@ make
 ```
 make rel
 ```
+or
 
 ```
 make rel VER=v1.0.0 HASH=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
