@@ -39,7 +39,7 @@ make rel
 ```
 
 ```
-make rel VER=v1.0.0
+make rel VER=v1.0.0 HASH=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
 ## USAGE

@@ -6,7 +6,9 @@ RELDIR=$(NAME)-bin
 
 VER=pre-release
 
-CXXFLAGS=-std=c++17 -pedantic  -Wall -O2 -D__DCVERSION__='"$(VER)"'
+HASH=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+CXXFLAGS=-std=c++17 -pedantic  -Wall -O2 -D__DCVERSION__='"$(VER)"' -D__DCHASH__='"$(HASH)"'
 LDFLAGS=-dynamic-libstdc++ -dynamic-libgcc #-static-libstdc++ -static-libgcc
 
 RM=del

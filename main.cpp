@@ -59,9 +59,15 @@ static void usage(const std::vector<CSoulGame> &games)
 
 #ifdef __DCVERSION__
     std::cerr << "\tVERSION:" << __DCVERSION__ << "\n";
+#endif
+
+#ifdef __DCHASH__
+    std::cerr << "\tHASH:" << __DCHASH__ << "\n";
+#endif
+
     std::cerr << "\tCOMPILED DATE:" << __DATE__ << "\n";
     std::cerr << "\tCOMPILED TIME:" << __TIME__ << "\n\n";
-#endif
+
 
     std::cerr << "\tUsage:\n";
     std::cerr << "\t\tprogram\n";
