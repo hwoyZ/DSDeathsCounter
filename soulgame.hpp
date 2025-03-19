@@ -64,7 +64,7 @@ protected:
 public:
 
     CSoulGameProcess(CSoulGameProcess &&g):
-        name(g.name),pid(g.pid),hProcess(g.hProcess), baseaddress(g.baseaddress), offset(g.offset)
+        name(g.name),pid(g.pid),hProcess(g.hProcess), baseaddress(g.baseaddress), offset(std::move(g.offset))
     {
         g.pid=0;
         g.hProcess=0;
