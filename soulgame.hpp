@@ -152,7 +152,7 @@ public:
         BOOL isWow64 = FALSE;
         if (!IsWow64Process(hProcess, &isWow64))
         {
-            return std::make_pair(CError{4,this->name+": Wow64 error."},CSoulGameProcess_DUMMY());
+            return { CError{4,this->name+": Wow64 error."},CSoulGameProcess_DUMMY() };
         }
 
         return { CError{0,""},CSoulGameProcess(name,pid,hProcess,baseaddress,isWow64 ? offset32:offset64) };
