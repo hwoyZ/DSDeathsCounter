@@ -134,19 +134,19 @@ public:
 
         if(!pid)
         {
-            return std::make_pair(CError{1,this->name+": PID not found."},CSoulGameProcess_DUMMY());
+            return { CError{1,this->name+": PID not found."},CSoulGameProcess_DUMMY() };
         }
 
         const HANDLE hProcess = ::OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, false, pid);
         if(!hProcess)
         {
-            return std::make_pair(CError{2,this->name+": can be not open."},CSoulGameProcess_DUMMY());
+            return { CError{2,this->name+": can be not open."},CSoulGameProcess_DUMMY() };
         }
 
         const HMODULE baseaddress = ::GetBaseAddress(hProcess);
         if(!baseaddress)
         {
-            return std::make_pair(CError{3,this->name+": can not access baseaddress."},CSoulGameProcess_DUMMY());
+            return { CError{3,this->name+": can not access baseaddress."},CSoulGameProcess_DUMMY() };
         }
 
         BOOL isWow64 = FALSE;
@@ -155,7 +155,7 @@ public:
             return std::make_pair(CError{4,this->name+": Wow64 error."},CSoulGameProcess_DUMMY());
         }
 
-        return std::make_pair(CError{0,""},CSoulGameProcess(name,pid,hProcess,baseaddress,isWow64 ? offset32:offset64));
+        return { CError{0,""},CSoulGameProcess(name,pid,hProcess,baseaddress,isWow64 ? offset32:offset64) };
     }
 
     const std::string& getname() const
