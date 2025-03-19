@@ -10,15 +10,17 @@
 
 #include "soulgame.hpp"
 
-#define DEFAULT_FILENAME "DSDeathsCount.txt"
+
+static constexpr auto SEARCHING_SLEEP_TIME=std::chrono::milliseconds(500);
+
+static constexpr auto GETDEATHCOUNT_SLEEP_TIME=std::chrono::milliseconds(1000);
+
+static constexpr auto DEFAULT_FILENAME="DSDeathsCount.txt";
+
 
 #define DEFAULT_PLACEHOLDER "{}"
 
 #define DEFAULT_FORMATTED_TEXT ("Deaths: " DEFAULT_PLACEHOLDER)
-
-#define SEARCHING_SLEEP_TIME std::chrono::milliseconds(500)
-
-#define GETDEATHCOUNT_SLEEP_TIME std::chrono::milliseconds(1000)
 
 
 
